@@ -1,8 +1,9 @@
 const app = require('./app')
 const dotenv = require('dotenv')
+const cors = require('cors')
 
 const connectDatabase = require('./db')
-
+app.use(cors())
 // Handling Uncaught Error
 process.on('uncaughtException', (err) => {
     console.log(`Error: ${err.message}`);
